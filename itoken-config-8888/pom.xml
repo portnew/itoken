@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.zhang</groupId>
-    <artifactId>itoken-config</artifactId>
+    <artifactId>itoken-config-8888</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>itoken-config</name>
+    <name>itoken-config-8888</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -27,12 +27,18 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- Spring Boot Admin Begin -->
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Admin End -->
     </dependencies>
 
     <dependencyManagement>

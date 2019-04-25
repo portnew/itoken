@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: itoken-config-8888
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/portnew/itoken/itoken-config.git
+          search-paths: respo
+          username: 865383353@qq.com
+          password: zhy13816995497
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
