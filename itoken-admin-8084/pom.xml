@@ -8,13 +8,14 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.zhang</groupId>
-    <artifactId>itoken-zuul</artifactId>
+    <artifactId>itoken-admin-8084</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>itoken-zuul</name>
+    <name>itoken-admin-8084</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
+        <spring-boot-admin.version>2.1.4</spring-boot-admin.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
     </properties>
 
@@ -24,18 +25,12 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
     </dependencies>
@@ -46,6 +41,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

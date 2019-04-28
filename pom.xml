@@ -15,15 +15,18 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>itoken-admin</module>
+        <module>itoken-admin-8084</module>
         <module>itoken-commons</module>
-        <module>itoken-eureka</module>
-        <module>itoken-zipkin</module>
+        <module>itoken-eureka-8761</module>
+        <module>itoken-zipkin-9411</module>
         <module>itoken-zuul</module>
-        <module>itoken-config</module>
+        <module>itoken-config-8888</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
+        <zipkin.version>2.1.0.RELEASE</zipkin.version>
+        <admin.version>2.1.2</admin.version>
+
     </properties>
 
     <dependencies>
@@ -31,13 +34,35 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+        <!-- admin -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${admin.version}</version>
+        </dependency>
 
+        <!--测试模块-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--zipkin链路追踪-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>${zipkin.version}</version>
+        </dependency>
+
+        <!--actuator监管-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
     </dependencies>
+
 
     <build>
         <plugins>
