@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: itoken-zuul-8769
+  boot:
+    admin:
+      client:
+        url: http://192.168.1.164:8084
+  zipkin:
+    base-url: http://192.168.1.164:9411
+
+server:
+  port: 8769
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.164:8761/eureka/,http://192.168.1.164:8861/eureka/,http://192.168.1.164:8961/eureka/
+
+  instance:
+    instance-id: zuul-8769
+    prefer-ip-address: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+#zuul:
+#  routes:
+#    mydept.serviceId: springcloud-dept
+#    mydept.path: /mydept/**
+#  ignored-services: "*"
+#  prefix: /zhang
