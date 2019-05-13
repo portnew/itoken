@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: eureka-8761
+    name: eureka
   boot:
     admin:
       client:
@@ -15,8 +15,8 @@ eureka:
   instance:
     hostname: 192.168.1.164
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://192.168.1.164:8761/eureka/,http://192.168.1.164:8861/eureka/,http://192.168.1.164:8961/eureka/
 
