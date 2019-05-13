@@ -48,6 +48,7 @@
 
         <!--zipkin链路追踪-->
         <dependency>
+
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
             <version>${zipkin.version}</version>
