@@ -1,4 +1,4 @@
-package com.zhang.itokenserviceadmin.service.service;
+package com.zhang.itokenserviceadmin.service;
 
 import com.zhang.itokenserviceadmin.domain.TbSysUser;
 
