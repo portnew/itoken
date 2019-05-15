@@ -16,8 +16,8 @@ eureka:
     hostname: server1
     prefer-ip-address: false
   client:
-#    registerWithEureka: false
-#    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://server2:8861/eureka/,http://server3:8961/eureka/
 
