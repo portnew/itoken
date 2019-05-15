@@ -13,13 +13,13 @@ spring:
 
 eureka:
   instance:
-    hostname: server2
+    hostname: server2.com
     prefer-ip-address: false
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://server1:8761/eureka/,http://server3:8961/eureka/
+      defaultZone: http://server1.com:8761/eureka/,http://server3.com:8961/eureka/
 
 management:
   endpoint:
