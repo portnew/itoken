@@ -22,6 +22,7 @@
         <module>itoken-zipkin-9411</module>
         <module>itoken-zuul</module>
         <module>itoken-config-8888</module>
+        <module>itoken-service-admin</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
