@@ -77,4 +77,5 @@ public class BaseResult implements Serializable {
         private String message;
 
     }
+
 }

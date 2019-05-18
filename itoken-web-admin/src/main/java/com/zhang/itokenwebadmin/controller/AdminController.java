@@ -15,10 +15,10 @@ public class AdminController {
     @Autowired
     AdminService service;
 
-    @RequestMapping({"login",""})
+    @RequestMapping("login")
     public String login(){
         String json = service.login("", "");
-        System.out.println(json);
+        System.out.println("controller打印："+json);
         return "index";
     }
 }

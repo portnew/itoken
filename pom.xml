@@ -24,6 +24,7 @@
         <module>itoken-config-8888</module>
         <module>itoken-service-admin</module>
         <module>itoken-web-admin</module>
+        <module>itoken-service-redis</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

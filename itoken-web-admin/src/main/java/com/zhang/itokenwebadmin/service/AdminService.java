@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Author: 张宏运
  * @Date: 2019-05-15 17:34
  */
-@FeignClient(value = "itoken-service-admin")
+@FeignClient(value = "itoken-service-admin",fallbackFactory = AdminServiceFallbackFactory.class)
 public interface AdminService {
     @GetMapping(value = "login")
     String login(@RequestParam(value = "loginCode") String loginCode,@RequestParam(value = "password") String password);
