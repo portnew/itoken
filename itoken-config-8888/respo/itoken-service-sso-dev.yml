@@ -1,42 +1,47 @@
 server:
-  port: 8501
+  port: 8503
 
 spring:
   application:
-    name: itoken-service-admin
+    name: itoken-service-sso
   boot:
     admin:
       client:
-        url: http://192.168.1.164:8084
+        url: http://localhost:8084
   zipkin:
-    base-url: http://192.168.1.164:9411
-
-#    配置数据源
+    base-url: http://localhost:9411
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+  #    配置数据源
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://localhost:3306/itoken-service-admin?serverTimezone=UTC          # 数据库名称
+    url: jdbc:mysql://localhost:3306/itoken-service-sso?serverTimezone=UTC          # 数据库名称
     username: root
     password: zhanghongy
     initialSize: 5
     minIdle: 5
     maxActive: 20
-  # 配置获取连接等待超时的时间
+    # 配置获取连接等待超时的时间
     maxWait: 60000
-  # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
     timeBetweenEvictionRunsMillis: 60000
-  # 配置一个连接在池中最小生存的时间，单位是毫秒
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
     minEvictableIdleTimeMillis: 300000
     validationQuery: SELECT 1 FROM DUAL
     testWhileIdle: true
     testOnBorrow: false
     testOnReturn: false
     poolPreparedStatements: true
-  # 配置监控统计拦截的filters,去掉监控界面sql无法统计，‘wall’用于防火墙
+    # 配置监控统计拦截的filters,去掉监控界面sql无法统计，‘wall’用于防火墙
     filters: stat,wall,log4j
     maxPoolPreparedStatementPerConnectionSize: 20
     userGlobalDataSourceStat: true
-  # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 mybatis:
   type-aliases-package: com.zhang.itokencommondomain.domain
@@ -44,11 +49,13 @@ mybatis:
 
 eureka:
   instance:
-    hostname: 192.168.1.164
+    hostname: server1.com
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.164:8761/eureka/,http://192.168.1.164:8861/eureka/,http://192.168.1.164:8961/eureka/
-
+      defaultZone: http://server1.com:8761/eureka/
+feign:
+  hystrix:
+    enabled: true
 management:
   endpoint:
     health:
