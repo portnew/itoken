@@ -2,6 +2,8 @@ server:
   port: 8503
 
 spring:
+  mvc:
+    static-path-pattern: /static/**
   application:
     name: itoken-service-sso
   boot:
