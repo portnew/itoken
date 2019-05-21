@@ -1,6 +1,6 @@
 package com.zhang.itokenserviceadmin;
 
-import com.zhang.itokenserviceadmin.domain.TbSysUser;
+import com.zhang.itokencommondomain.domain.TbSysUser;
 import com.zhang.itokenserviceadmin.service.AdminService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,6 @@
 package com.zhang.itokenserviceadmin.service.impl;
 
-import com.zhang.itokenserviceadmin.domain.TbSysUser;
+import com.zhang.itokencommondomain.domain.TbSysUser;
 import com.zhang.itokenserviceadmin.mapper.TbSysUserMapper;
 import com.zhang.itokenserviceadmin.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;

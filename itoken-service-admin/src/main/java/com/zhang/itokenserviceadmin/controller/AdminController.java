@@ -2,7 +2,7 @@ package com.zhang.itokenserviceadmin.controller;
 
 import com.google.common.collect.Lists;
 import com.zhang.itoken.commons.BaseResult;
-import com.zhang.itokenserviceadmin.domain.TbSysUser;
+import com.zhang.itokencommondomain.domain.TbSysUser;
 import com.zhang.itokenserviceadmin.service.AdminService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

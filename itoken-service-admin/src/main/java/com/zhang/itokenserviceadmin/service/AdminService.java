@@ -1,6 +1,6 @@
 package com.zhang.itokenserviceadmin.service;
 
-import com.zhang.itokenserviceadmin.domain.TbSysUser;
+import com.zhang.itokencommondomain.domain.TbSysUser;
 
 /**
  * @Author: 张宏运

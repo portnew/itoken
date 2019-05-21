@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/css/signin.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+<body class="text-center">
+<div th:if="${tbSysUser!=null}" >
+    <h1 class="text-center" th:text="${tbSysUser.getLoginCode()}">请登录</h1>
+    <h2>欢迎</h2>
+</div>
+<form class="form-signin" th:action="@{/login}" method="post" th:if="${tbSysUser==null}" >
+    <input type="hidden" name="url" th:value="${url}">
+    <i class="mb-4 fa fa-user-circle-o fa-5x" ></i>
+    <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+    <p style="color: red;" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <label for="inputEmail" class="sr-only">用户名</label>
+    <input type="text" id="inputEmail" class="form-control" placeholder="LoginCode" name="loginCode" required autofocus>
+    <label for="inputPassword" class="sr-only">密码</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> 记住我
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+</body>
+</html>

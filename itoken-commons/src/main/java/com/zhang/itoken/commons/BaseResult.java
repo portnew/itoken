@@ -1,5 +1,6 @@
 package com.zhang.itoken.commons;
 
+import com.zhang.itokencommondomain.domain.TbSysUser;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -27,7 +28,7 @@ public class BaseResult implements Serializable {
     private Cursor cursor;
     private List<Error> errors;
 
-   private static BaseResult createResult(String result,Object data,String success,Cursor cursor,List<Error> errors){
+   private static BaseResult createResult(String result, TbSysUser data, String success, Cursor cursor, List<Error> errors){
       BaseResult baseResult = new BaseResult();
       baseResult.setResult(result);
       baseResult.setData(data);
@@ -40,7 +41,7 @@ public class BaseResult implements Serializable {
     public static BaseResult ok(){
         return createResult(RESULT_NOT_OK,null,SUCCESS,null,null);
     }
-    public static BaseResult ok(Object data){
+    public static BaseResult ok(TbSysUser data){
        return createResult(RESULT_NOT_OK,data,SUCCESS,null,null);
     }
     public static BaseResult notOk(List<BaseResult.Error> errors){

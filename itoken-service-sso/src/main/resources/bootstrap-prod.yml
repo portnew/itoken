@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      uri: http://192.168.1.164:8888
+      name: itoken-service-sso
+      label: master
+      profile: prod
+

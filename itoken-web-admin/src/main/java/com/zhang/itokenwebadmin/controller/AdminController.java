@@ -4,6 +4,7 @@ package com.zhang.itokenwebadmin.controller;
 import com.zhang.itokenwebadmin.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,10 +16,8 @@ public class AdminController {
     @Autowired
     AdminService service;
 
-    @RequestMapping("login")
-    public String login(){
-        String json = service.login("", "");
-        System.out.println("controller打印："+json);
+    @GetMapping(value = {"index",""})
+    public String index(){
         return "index";
     }
 }

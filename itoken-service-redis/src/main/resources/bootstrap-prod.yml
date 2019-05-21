@@ -5,3 +5,4 @@ spring:
       name: itoken-service-redis
       label: master
       profile: prod
+

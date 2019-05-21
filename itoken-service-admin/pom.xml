@@ -27,6 +27,11 @@
             <artifactId>itoken-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.zhang</groupId>
+            <artifactId>itoken-common-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!--spring boot start -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
