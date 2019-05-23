@@ -1,3 +1,5 @@
+myUrl: localhost:8604
+ssoUrl: http://localhost:8503
 server:
   port: 8604
 
