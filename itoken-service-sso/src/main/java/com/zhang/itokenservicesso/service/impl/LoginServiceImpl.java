@@ -18,10 +18,9 @@ import tk.mybatis.mapper.entity.Example;
 public class LoginServiceImpl implements LoginService {
 
     TbSysUser tbSysUser = null;
+
     @Autowired
     TbSysUserMapper mapper;
-
-
 
     @Autowired
     RedisService redisService;

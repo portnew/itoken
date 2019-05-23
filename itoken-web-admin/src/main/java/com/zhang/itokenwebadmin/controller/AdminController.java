@@ -18,6 +18,7 @@ public class AdminController {
 
     @GetMapping(value = {"index",""})
     public String index(){
+        System.out.println("来到了Admin的controller index方法");
         return "index";
     }
 }
