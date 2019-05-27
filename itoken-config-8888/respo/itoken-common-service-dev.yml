@@ -1,0 +1,30 @@
+
+
+spring:
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  zipkin:
+    base-url: http://localhost:9411
+
+  #    配置数据源
+
+
+eureka:
+  instance:
+    hostname: server1.com
+  client:
+    serviceUrl:
+      defaultZone: http://server1.com:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
