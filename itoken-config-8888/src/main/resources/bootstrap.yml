@@ -13,8 +13,9 @@ spring:
         git:
           uri: https://github.com/portnew/itoken.git
           search-paths: itoken-config-8888/respo #配置文件的保存位置
-          username: 865383353@qq.com
-          password: zhy13816995497
+          username: ENC(gwaK1XKYw+RGIXXzNMNCMLbCGutrORHhS7L2SmnTHxI=)
+          password: ENC(/Wrvn41P3jlGNKf56QedlU1utiEN9KGW)
+
   zipkin:
     base-url: http://localhost:9411
 
@@ -34,3 +35,14 @@ management:
     web:
       exposure:
         include: health,info
+# 设置密钥
+#encrypt:
+#  key: zhang
+jasypt:
+  encryptor:
+    # 任意的随机字符串均可
+    password: zhang
+    # 自定义属性规则，默认前缀是“ENC(”，后缀为“)”
+    property:
+      prefix: "ENC["
+      suffix: "]"
